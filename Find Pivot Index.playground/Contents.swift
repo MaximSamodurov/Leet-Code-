@@ -25,3 +25,4 @@ func pivotIndex(_ nums: [Int]) -> Int {
 }
 
 pivotIndex([1,7,3,6,5,6])
+
