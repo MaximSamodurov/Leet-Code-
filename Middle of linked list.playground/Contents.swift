@@ -1,6 +1,4 @@
-import Foundation
-
-
+import UIKit
 
 public class ListNode {
     public var val: Int
@@ -8,23 +6,23 @@ public class ListNode {
     public init() { self.val = 0; self.next = nil; }
     public init(_ val: Int) { self.val = val; self.next = nil; }
     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
-  }
- 
+}
 
-func middleNode(_ head: ListNode?) -> ListNode? {
-//    guard let safe = head else { return nil }
-    let array = [Int]()
-    var headArray = head
-    
-    var lenght = 0
-    while head != nil {
-        array.append(head)
-        headArray = head
-        lenght += 1
+let firstNode = ListNode(1, secondNode)
+let secondNode = ListNode(2, thirdNode)
+let thirdNode = ListNode(3)
+
+class Solution {
+    func middleNode(_ head: ListNode?) -> ListNode? {
+        
+        var mid = head
+        var fast = head
+        
+        while fast != nil && fast?.next != nil {
+            mid = mid?.next
+            fast = fast?.next?.next
+        }
+        return mid
     }
-    
-    
-    return array.count / 2
- }
-
+}
 
