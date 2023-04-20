@@ -1,6 +1,8 @@
 import UIKit
 
 
+//https://www.youtube.com/watch?v=QADFr-TfCXs объяснение
+
   public class ListNode {
       public var val: Int
       public var next: ListNode?
@@ -13,17 +15,18 @@ import UIKit
 
 class Solution {
     func reverseList(_ head: ListNode?) -> ListNode? {
-        
+
         var prev: ListNode?
         var next: ListNode?
         var current = head
-        
+
         while current != nil {
-            next = current?.next
-            current?.next = prev
-            prev = current
-            current = next
+            next = current?.next // устанавливем на следущий после карент
+            current?.next = prev //указываем на предыдущий т.е меняем стрелку в обратную сторону
+            prev = current // переключаем указатель с предыдущего на текущий
+            current = next // сдвиг current на след позицию
         }
         return prev
     }
 }
+

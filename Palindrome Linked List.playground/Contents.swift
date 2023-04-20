@@ -12,23 +12,24 @@ import UIKit
 class Solution {
    
     func isPalindrome(_ head: ListNode?) -> Bool {
-        var mid = head
+        if head == nil { return false }
+        var slow = head
         var fast = head
         
+        
         while fast != nil && fast?.next != nil {
-            mid = mid?.next
+            slow = slow?.next
             fast = fast?.next?.next
         }
         
-        var next: ListNode
-        var prev: ListNode
-        var current = head
+        var prev: ListNode? = nil
+        slow = slow?.next
         
-        while next != mid {
-            next = current?.next
-            current?.next = prev
-            prev = current
-            current = next
+        while slow?.next != nil {
+            let nextNode = slow?.next
+            slow?.next = prev
+            prev = slow
+            slow = nextNode
         }
     }
 }
