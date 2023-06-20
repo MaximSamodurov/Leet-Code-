@@ -1,13 +1,12 @@
 import UIKit
 
 func subtractProductAndSum(_ n: Int) -> Int {
-    
-    var prod = 1
-    var sum = 0
-    let digits = String(n).compactMap{ $0.wholeNumberValue }
-    for i in digits {
-        prod = prod * i
-        sum = sum + i
+    let digits = String(n)
+    var prod = digits.reduce(1, { x, y in
+        Int(String(x))! * Int(String(y))!
+    })
+    var sum = digits.reduce(0) { x, y in
+        Int(String(x))! + Int(String(y))!
     }
     return prod - sum
 }
