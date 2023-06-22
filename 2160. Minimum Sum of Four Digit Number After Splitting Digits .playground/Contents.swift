@@ -19,3 +19,9 @@ func minimumSum(_ num: Int) -> Int {
     return result1 + result2
 }
 minimumSum(2932)
+
+let array = [1,2,3,4]
+let intString = array.reduce(1) { result, digit in
+    return result * 10 + digit
+}
+print(intString)
