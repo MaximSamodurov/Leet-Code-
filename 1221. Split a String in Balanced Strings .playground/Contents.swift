@@ -17,4 +17,22 @@ func balancedStringSplit(_ s: String) -> Int {
     return result
 }
 
-balancedStringSplit("RLRRLLRLRL")
+//balancedStringSplit("RLRRLLRLRL")
+
+
+func sumOfMultiples(_ n: Int) -> Int {
+    var array = Array(1...n)
+    var result = 0
+    
+    for i in 0..<array.count {
+        if array[i] % 3 == 0 {
+            result += array[i]
+        } else if array[i] % 5 == 0 {
+            result += array[i]
+        } else if array[i] % 7 == 0 {
+            result += array[i]
+        }
+    }
+        return result
+}
+    sumOfMultiples(7)
