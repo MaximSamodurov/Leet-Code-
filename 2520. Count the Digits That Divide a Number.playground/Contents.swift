@@ -14,7 +14,7 @@ import UIKit
 //    return count
 //}
 
-func countDigits(_ num: Int) -> Int {
-    String(num).filter { Int(String($0))! % num == 0 }
-}
+//func countDigits(_ num: Int) -> Int {
+//    String(num).filter { Int(String($0))! % num == 0 }
+//}
 countDigits(1248)
