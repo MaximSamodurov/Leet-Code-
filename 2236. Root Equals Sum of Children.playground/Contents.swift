@@ -15,7 +15,7 @@ public class TreeNode {
 }
  
 class Solution {
-    func checkTree(_ root: TreeNode?) -> Bool {
+    func checkTree(_ root: TreeNode?) -> Bool { 
         root!.val == root!.left!.val + root!.right!.val
     }
 }
